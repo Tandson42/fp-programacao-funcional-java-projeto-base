@@ -54,7 +54,7 @@ public class Aula04 extends Aula {
 
     protected long totalEstudantesCursoAndSexo(@NonNull final Stream<Estudante> stream, @NonNull final Curso curso, final char sexo) {
         return estudantes.stream()
-                .filter(e -> e.getSexo() == 'sexo')
+                //.filter(e -> e.getSexo() == 'sexo')
                 ;
     }
 
