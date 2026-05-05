@@ -53,24 +53,35 @@ public class Aula04 extends Aula {
     }
 
     protected long totalEstudantesCursoAndSexo(@NonNull final Stream<Estudante> stream, @NonNull final Curso curso, final char sexo) {
-        // TODO: Você precisa implementar este método. Apague estas linhas e escreva o código correto.
-        return -1;
+        return estudantes.stream()
+                .filter(e -> e.getSexo() == 'sexo');
     }
 
     protected double mediaNotaTodosEstudantesCurso(@NonNull final Stream<Estudante> stream, @NonNull final Curso curso){
-        // TODO: Você precisa implementar este método. Apague estas linhas e escreva o código correto.
-        return -1;
+        return estudantes.stream()
+                .filter(e -> e.getCurso() != null && e.getCurso().equals(curso))
+                .mapToDouble(Estudante::getNota)
+                .average()
+                .orElse(0)
+                ;
     }
 
     protected double maiorNotaTodosEstudantes(@NonNull final Stream<Estudante> stream){
-        // TODO: Você precisa implementar este método. Apague estas linhas e escreva o código correto.
-        return -1;
+        return estudantes.stream()
+                .mapToDouble(Estudante::getNota)
+                .max()
+                .orElse(0)
+                ;
     }
 
 
     protected double maiorNotaHomens(@NonNull final Stream<Estudante> stream){
-        // TODO: Você precisa implementar este método. Apague estas linhas e escreva o código correto.
-        return -1;
+        return estudantes.stream()
+                .filter((Estudante e) -> e.getSexo() == 'M')
+                .mapToDouble(Estudante::getNota)
+                .max()
+                .orElse(0)
+        ;
     }
 }
 
